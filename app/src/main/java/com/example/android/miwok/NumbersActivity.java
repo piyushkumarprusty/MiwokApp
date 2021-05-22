@@ -32,9 +32,7 @@ public class NumbersActivity extends AppCompatActivity {
         LinearLayout rootView = (LinearLayout)findViewById(R.id.rootView);
 
         TextView wordsView = new TextView(this);
-
         wordsView.setText(words.get(0));
-
         rootView.addView(wordsView);
 
 
