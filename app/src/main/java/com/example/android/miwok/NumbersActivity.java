@@ -2,7 +2,9 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,7 +18,49 @@ public class NumbersActivity extends AppCompatActivity {
 
         /*USING <ARRAYLIST> NOW WE WILL DO */
 
-        ArrayList<String> words = new ArrayList<String>();
+        ArrayList<Word> words = new ArrayList<Word>();
+        //words.add("one");
+
+        words.add(new Word("one", "lutti"));
+        words.add(new Word("two", "oti"));
+        words.add(new Word("three", "latti"));
+        words.add(new Word("four", "mmutti"));
+        words.add(new Word("five", "laatti"));
+        words.add(new Word("six", "luqwi"));
+        words.add(new Word("seven", "luzctti"));
+        words.add(new Word("eight", "luttaai"));
+        words.add(new Word("nine", "luasdfi"));
+//OR
+        Word w = new Word("ten", "lutti");
+        words.add(w);
+
+
+        WordAdapter Adapter = new WordAdapter(this, words);
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(Adapter);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+         ArrayList<String> words = new ArrayList<String>();
 
         words.add("one");
         words.add("two");
@@ -28,22 +72,59 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("eight");
         words.add("nine");
 
+        ArrayAdapter<String> itemsAdapter =  new ArrayAdapter<String>(this , R.layout.list_item, words);        // android.R.layout.simple_list_item1 is replaced
+        ListView listView = (ListView)findViewById(R.id.list);
+        listView.setAdapter(itemsAdapter);
+*/
+/*
 
-        LinearLayout rootView = (LinearLayout)findViewById(R.id.rootView);
+         ArrayList<String> words = new ArrayList<String>();
 
-        TextView wordsView = new TextView(this);
-        wordsView.setText(words.get(0));
-        rootView.addView(wordsView);
+        words.add("one");
+        words.add("two");
+        words.add("three");
+        words.add("four");
+        words.add("five");
+        words.add("six");
+        words.add("seven");
+        words.add("eight");
+        words.add("nine");
+
+            LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+            for (int index = 0 ; index<words.size() ; index++){
+                TextView wordsView = new TextView(this);
+                wordsView.setText(words.get(index));
+                rootView.addView(wordsView);
+
+            } */
 
 
-    }
-}
+/*          int index = 0;
+            while (index < words.size()) {
+            TextView wordsView = new TextView(this);
+            wordsView.setText(words.get(index));
+            rootView.addView(wordsView);                 // addView is used show text
+            index++;
+        }   */
 
+
+
+
+
+/*  NOW WE DON'T HAVE TO USE THIS AS WE HAVE USED THE WHILE LOOPS:
+        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+        TextView wordsView2 = new TextView(this);
+        wordsView2.setText(words.get(1));
+        rootView.addView(wordsView2);
+
+        TextView wordsView3 = new TextView(this);
+        wordsView3.setText(words.get(2));
+        rootView.addView(wordsView3);*/
 
 
 /*  THIS WER HAVE DONE USING ARRAY*/
 /*
-        String[] words =  new String(10);
+        String[] words =  new String[10] ;
         words[0] = "one";
         words[1] = "two";
         words[2] = "three";
@@ -90,7 +171,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         TO FIND SIZE ::
         in array:       names.length;
-        in ArrayList:   names.length();
+        in ArrayList:   names.size();
 */
 
 

@@ -40,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent colorIntent = new Intent(MainActivity.this, ColorsActivity.class);
                 startActivity(colorIntent);
+
             }
         });
+
+
 
         TextView family = (TextView) findViewById(R.id.family);
         family.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+}
 
 
 
@@ -76,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-/*   // THIS IS OF NO USE AS BECOZ WE ARE USING ONcLICKlISTNER
+/*
+       // THIS IS OF NO USE AS BECOZ WE ARE USING ONcLICKlISTNER
     // now we have to dlt onclick in xml code
     //THIS IS EXPLICIT INTENT AS IT IS TAKING US TO ANOTHER PAGE
 
@@ -87,7 +92,37 @@ public class MainActivity extends AppCompatActivity {
 
     */
 
-}
+    /*
+        fun number(View)
+        {
+        val name =  name.Input.editableText.toString()
+
+        Toast.makeText(this , "name is $name", Toast.LENGTH_LONG).show()
+
+        }
+    */
+
+            // DIFFERENCE BETWEEN IMPLICIT INTENT AND EXPLICIT INTENT
+    /*
+        IMPLICIT INTENT
+        Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
+
+        //Verify that the intent will resolve properly:
+
+        if (sendIntent.resolveActivity(getPackageManager()) !=null){
+        startActivity(sendIntent);
+        }
+    */
+
+
+    /*
+        EXPLICIT INTENT
+         Intent sendIntent = new Intent(this , NumbersActivity.class);
+         startActivity(sendIntent);
+
+    */
+
+
 
 
 
